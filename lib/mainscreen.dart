@@ -1,5 +1,6 @@
 import 'package:dekutca/groups.dart';
 import 'package:dekutca/homescreen.dart';
+import 'package:dekutca/leaders.dart';
 import 'package:dekutca/prayers.dart';
 import 'package:dekutca/readings.dart';
 import 'package:flutter/material.dart';
@@ -17,10 +18,10 @@ class _MainScreenState extends State<MainScreen> {
 
 // variable to store the different screens to be displayed
   final screens = [
-    const Announcement(),
     const Homescreen(),
+    const Announcement(),
     const Readings(),
-    //const Prayers()
+    const Leaders()
   ];
   @override
   Widget build(BuildContext context) {
@@ -36,13 +37,13 @@ class _MainScreenState extends State<MainScreen> {
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),
         items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.group),
             label: 'Groups',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.church), label: 'Readings'),
-          //BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Prayers'),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Leaders'),
         ],
       ),
     );
