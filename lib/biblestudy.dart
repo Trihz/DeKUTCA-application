@@ -52,9 +52,10 @@ class _BibleStudyState extends State<BibleStudy> {
                   const Text(
                     'Bible study is the metal that forges a christian',
                     style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.white,
-                        fontStyle: FontStyle.italic,),
+                      fontSize: 12,
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic,
+                    ),
                   ),
                 ],
               ),
@@ -293,8 +294,8 @@ class _BibleStudyState extends State<BibleStudy> {
                               child: Center(
                                 child: Text(
                                   'Catholic hostels and Nyeri View',
-                                  style:
-                                      TextStyle(fontSize: 13, color: Colors.pink),
+                                  style: TextStyle(
+                                      fontSize: 13, color: Colors.pink),
                                 ),
                               ),
                             ),

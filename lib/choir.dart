@@ -57,12 +57,12 @@ class _ChoirState extends State<Choir> {
                     ),
                     Container(
                       height: MediaQuery.of(context).size.height * 0.07,
-                      width: MediaQuery.of(context).size.width * 0.7,
+                      width: MediaQuery.of(context).size.width * 0.9,
                       decoration:
                           const BoxDecoration(color: Colors.transparent),
                       child: const Center(
                         child: Text(
-                          '"Serve the LORD with gladness;\nCome before His presence with singing.\n(Psalm 100:2)"',
+                          '"Serve the LORD with gladness;Come before His presence with singing.\n(Psalm 100:2)"',
                           style: TextStyle(
                             fontSize: 11,
                             fontStyle: FontStyle.italic,
@@ -72,33 +72,16 @@ class _ChoirState extends State<Choir> {
                       ),
                     ),
                     Container(
-                      height: MediaQuery.of(context).size.height * 0.05,
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      decoration:
-                          const BoxDecoration(color: Colors.transparent),
-                      child: const Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Meetings and Members',
-                          style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.01,
-                      width: MediaQuery.of(context).size.width * 1,
-                      decoration:
-                          const BoxDecoration(color: Colors.transparent),
-                    ),
+                        height: MediaQuery.of(context).size.height * 0.05,
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        decoration:
+                            const BoxDecoration(color: Colors.transparent)),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.13,
-                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.16,
+                          width: MediaQuery.of(context).size.width * 0.42,
                           decoration: const BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
@@ -109,11 +92,28 @@ class _ChoirState extends State<Choir> {
                               ],
                               borderRadius:
                                   BorderRadius.all(Radius.circular(5)),
-                              color: Colors.pink),
+                              color: Color.fromRGBO(255, 255, 255, 1)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.11,
+                                width: MediaQuery.of(context).size.width * 0.42,
+                                child: Image.asset("assets/members.png"),
+                              ),
+                              const Text(
+                                "Members:  Any CA member",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: Color.fromARGB(255, 45, 50, 89)),
+                              )
+                            ],
+                          ),
                         ),
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.13,
-                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.16,
+                          width: MediaQuery.of(context).size.width * 0.42,
                           decoration: const BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
@@ -124,7 +124,24 @@ class _ChoirState extends State<Choir> {
                               ],
                               borderRadius:
                                   BorderRadius.all(Radius.circular(5)),
-                              color: Colors.pink),
+                              color: Colors.white),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.11,
+                                width: MediaQuery.of(context).size.width * 0.42,
+                                child: Image.asset("assets/meeting.png"),
+                              ),
+                              const Text(
+                                "Room 7 (Friday 5pm)",
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: Color.fromARGB(255, 45, 50, 89)),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -157,7 +174,7 @@ class _ChoirState extends State<Choir> {
                                 'Leaders',
                                 style: TextStyle(
                                     fontSize: 17,
-                                    color: Colors.black,
+                                    color: Color.fromARGB(255, 45, 50, 89),
                                     fontWeight: FontWeight.w900),
                               ),
                             ),
@@ -531,7 +548,7 @@ class _ChoirState extends State<Choir> {
                           'Announcements',
                           style: TextStyle(
                               fontSize: 17,
-                              color: Colors.black,
+                              color: Color.fromARGB(255, 45, 50, 89),
                               fontWeight: FontWeight.w900),
                         ),
                       ),

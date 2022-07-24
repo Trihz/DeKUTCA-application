@@ -1,6 +1,7 @@
 import 'package:dekutca/announcements.dart';
 import 'package:dekutca/events.dart';
 import 'package:dekutca/gradienticon.dart';
+import 'package:dekutca/sunday_routine.dart';
 import 'package:dekutca/welfare.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -149,7 +150,8 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Welfare()));
+                                    builder: (context) =>
+                                        const SundayRoutine()));
                           },
                           child: Container(
                             height: MediaQuery.of(context).size.height * 0.12,
@@ -346,6 +348,7 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                         'Quo Vadis \n (5:00 pm)',
                                         style: TextStyle(
                                           fontSize: 11,
+                                          fontWeight: FontWeight.w200,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -381,6 +384,7 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                         'Streamed\n(12-1 pm)',
                                         style: TextStyle(
                                           fontSize: 11,
+                                          fontWeight: FontWeight.w200,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -388,6 +392,7 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                         'Quo Vadis\n(1-3 pm)',
                                         style: TextStyle(
                                           fontSize: 11,
+                                          fontWeight: FontWeight.w200,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -402,7 +407,7 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                             margin: const EdgeInsets.all(5),
                             width: MediaQuery.of(context).size.width * 0.9,
                             decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 207, 243, 199),
+                              color: Color.fromARGB(255, 45, 50, 89),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
                               boxShadow: [
@@ -438,21 +443,22 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                         'Bible Study',
                                         style: TextStyle(
                                             fontSize: 13,
-                                            color: Colors.black,
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         'Bible Study Group\n      (7:30 pm)',
                                         style: TextStyle(
                                           fontSize: 11,
-                                          color: Colors.black,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
                                         ),
                                       ),
                                       Text(
                                         ' \n ',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ],
@@ -473,28 +479,30 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                         'Shrine Prayers',
                                         style: TextStyle(
                                             fontSize: 13,
-                                            color: Colors.black,
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         'Shrine\n (1 pm)',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
                                         ),
                                       ),
                                       Text(
                                         'Mass',
                                         style: TextStyle(
                                             fontSize: 13,
-                                            color: Colors.black,
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         'Quo Vadis \n   (5pm)',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ],
@@ -508,7 +516,116 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                             margin: const EdgeInsets.all(5),
                             width: MediaQuery.of(context).size.width * 0.9,
                             decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 207, 243, 199),
+                              color: Color.fromARGB(255, 45, 50, 89),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey,
+                                    offset: Offset(2, 2),
+                                    blurRadius: 3,
+                                    spreadRadius: 1)
+                              ],
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.14,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.25,
+                                  child: Image.asset("assets/holymass3.png"),
+                                ),
+                                Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.2,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.26,
+                                  decoration: const BoxDecoration(
+                                      color: Colors.transparent),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: const [
+                                      Text(
+                                        'Bible Study',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        'Bible Study Group\n      (7:30 pm)',
+                                        style: TextStyle(
+                                          fontSize: 11,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Text(
+                                        ' \n ',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.2,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.28,
+                                  decoration: const BoxDecoration(
+                                      color: Colors.transparent),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: const [
+                                      Text(
+                                        'Staff Mass',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        'St.Charles Lwanga\n            (1 pm)',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Text(
+                                        'Mass',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        'Quo Vadis \n   (5pm)',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: MediaQuery.of(context).size.height * 0.15,
+                            margin: const EdgeInsets.all(5),
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            decoration: const BoxDecoration(
+                              color: Color.fromARGB(255, 45, 50, 89),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
                               boxShadow: [
@@ -535,8 +652,7 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                   width:
                                       MediaQuery.of(context).size.width * 0.25,
                                   decoration: const BoxDecoration(
-                                      color:
-                                          Color.fromARGB(255, 207, 243, 199)),
+                                      color: Colors.transparent),
                                   child: Column(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
@@ -545,22 +661,22 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                         'Daily Mass',
                                         style: TextStyle(
                                             fontSize: 15,
-                                            color:
-                                                Color.fromARGB(255, 79, 79, 79),
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         'Quo Vadis \n (5:00 pm)',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
                                         ),
                                       ),
                                       Text(
                                         ' \n ',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ],
@@ -581,124 +697,23 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                         'Adoration',
                                         style: TextStyle(
                                             fontSize: 15,
-                                            color:
-                                                Color.fromARGB(255, 79, 79, 79),
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         'Streamed\n(12-1 pm)',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                      Text(
-                                        '\n',
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            height: MediaQuery.of(context).size.height * 0.15,
-                            margin: const EdgeInsets.all(5),
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 207, 243, 199),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey,
-                                    offset: Offset(2, 2),
-                                    blurRadius: 3,
-                                    spreadRadius: 1)
-                              ],
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.14,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.25,
-                                  child: Image.asset("assets/holymass3.png"),
-                                ),
-                                Container(
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.15,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.25,
-                                  decoration: const BoxDecoration(
-                                      color:
-                                          Color.fromARGB(255, 207, 243, 199)),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: const [
-                                      Text(
-                                        'Daily Mass',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            color:
-                                                Color.fromARGB(255, 79, 79, 79),
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        'Quo Vadis \n (5:00 pm)',
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                      Text(
-                                        ' \n ',
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.15,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.25,
-                                  decoration: const BoxDecoration(
-                                      color: Colors.transparent),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: const [
-                                      Text(
-                                        'Adoration',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            color:
-                                                Color.fromARGB(255, 79, 79, 79),
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Text(
-                                        'Streamed\n(12-1 pm)',
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.black,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
                                         ),
                                       ),
                                       Text(
                                         'Quo Vadis\n(1-3 pm)',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ],
@@ -712,7 +727,7 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                             margin: const EdgeInsets.all(5),
                             width: MediaQuery.of(context).size.width * 0.9,
                             decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 207, 243, 199),
+                              color: Color.fromARGB(255, 45, 50, 89),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
                               boxShadow: [
@@ -748,22 +763,22 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                         'Koinonea',
                                         style: TextStyle(
                                             fontSize: 15,
-                                            color:
-                                                Color.fromARGB(255, 79, 79, 79),
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         'Room 7 SOB \n (7:00 pm)',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
                                         ),
                                       ),
                                       Text(
                                         ' \n ',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ],
@@ -784,22 +799,22 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                         'Adoration',
                                         style: TextStyle(
                                             fontSize: 15,
-                                            color:
-                                                Color.fromARGB(255, 79, 79, 79),
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         'Streamed\n(12-1 pm)',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
                                         ),
                                       ),
                                       Text(
                                         '\n',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ],
@@ -813,7 +828,7 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                             margin: const EdgeInsets.all(5),
                             width: MediaQuery.of(context).size.width * 0.9,
                             decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 207, 243, 199),
+                              color: Color.fromARGB(255, 45, 50, 89),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)),
                               boxShadow: [
@@ -840,8 +855,7 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                   width:
                                       MediaQuery.of(context).size.width * 0.25,
                                   decoration: const BoxDecoration(
-                                      color:
-                                          Color.fromARGB(255, 207, 243, 199)),
+                                      color: Colors.transparent),
                                   child: Column(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
@@ -850,22 +864,22 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                         'Daily Mass',
                                         style: TextStyle(
                                             fontSize: 15,
-                                            color:
-                                                Color.fromARGB(255, 79, 79, 79),
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         'Quo Vadis \n (5:00 pm)',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
                                         ),
                                       ),
                                       Text(
                                         ' \n ',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ],
@@ -886,22 +900,22 @@ class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
                                         'Adoration',
                                         style: TextStyle(
                                             fontSize: 15,
-                                            color:
-                                                Color.fromARGB(255, 79, 79, 79),
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         'Streamed\n(12-1 pm)',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          fontWeight: FontWeight.w200,
+                                          color: Colors.white,
                                         ),
                                       ),
                                       Text(
                                         '\n',
                                         style: TextStyle(
                                           fontSize: 12,
-                                          color: Colors.black,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ],

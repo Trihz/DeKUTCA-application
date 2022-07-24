@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class Welfare extends StatefulWidget {
   const Welfare({Key? key}) : super(key: key);
@@ -72,7 +75,11 @@ class _WelfareState extends State<Welfare> {
                         child: Container(
                           height: MediaQuery.of(context).size.height * 0.18,
                           width: MediaQuery.of(context).size.width * 0.3,
-                          child: Image.asset("assets/welfare.png"),
+                          child: const Icon(
+                            Icons.volunteer_activism,
+                            size: 60,
+                            color: Color.fromARGB(255, 45, 50, 89),
+                          ),
                         ),
                       ),
                     ),
@@ -125,8 +132,8 @@ class _WelfareState extends State<Welfare> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.15,
-                          width: MediaQuery.of(context).size.width * 0.7,
+                          height: MediaQuery.of(context).size.height * 0.16,
+                          width: MediaQuery.of(context).size.width * 0.8,
                           decoration: const BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
@@ -143,38 +150,205 @@ class _WelfareState extends State<Welfare> {
                             children: [
                               Container(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.1,
-                                width: MediaQuery.of(context).size.width * 0.18,
+                                    MediaQuery.of(context).size.height * 0.15,
+                                width: MediaQuery.of(context).size.width * 0.23,
                                 decoration: const BoxDecoration(
                                     color: Colors.transparent),
                                 child: Image.asset("assets/members.png"),
                               ),
                               Container(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.1,
-                                width: MediaQuery.of(context).size.width * 0.18,
+                                    MediaQuery.of(context).size.height * 0.15,
+                                width: MediaQuery.of(context).size.width * 0.52,
                                 decoration: const BoxDecoration(
                                     color: Colors.transparent),
                                 child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
-                                  children: const [
-                                    Text(
-                                      'Members:',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          color:
-                                              Color.fromARGB(255, 45, 50, 89),
-                                          fontWeight: FontWeight.bold,
-                                          fontStyle: FontStyle.italic),
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Center(
+                                        child: Container(
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.06,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.9,
+                                          decoration: const BoxDecoration(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(5)),
+                                              color: Colors.transparent),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.06,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.2,
+                                                decoration: const BoxDecoration(
+                                                    color: Colors.transparent),
+                                                child: const Align(
+                                                  alignment:
+                                                      Alignment.centerLeft,
+                                                  child: Text(
+                                                    "Co-ordinator:",
+                                                    style: TextStyle(
+                                                        fontSize: 13,
+                                                        fontWeight:
+                                                            FontWeight.w200,
+                                                        color: Color.fromARGB(
+                                                            255, 45, 50, 89)),
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.06,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.31,
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                          color: Colors
+                                                              .transparent),
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: const [
+                                                      Text(
+                                                        "Stephen Musangi",
+                                                        style: TextStyle(
+                                                            fontSize: 12,
+                                                            color:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    45,
+                                                                    50,
+                                                                    89)),
+                                                      ),
+                                                      Text(
+                                                        "(0792001961)",
+                                                        style: TextStyle(
+                                                            fontSize: 10,
+                                                            color:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    45,
+                                                                    50,
+                                                                    89)),
+                                                      )
+                                                    ],
+                                                  )),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
                                     ),
-                                    Text(
-                                      ' Coordinators',
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          color:
-                                              Color.fromARGB(255, 45, 50, 89),
-                                          fontStyle: FontStyle.italic),
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Center(
+                                        child: Container(
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.06,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.9,
+                                          decoration: const BoxDecoration(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(5)),
+                                              color: Colors.transparent),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.06,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.2,
+                                                decoration: const BoxDecoration(
+                                                    color: Colors.transparent),
+                                                child: const Align(
+                                                  alignment:
+                                                      Alignment.centerLeft,
+                                                  child: Text(
+                                                    "Secretary:",
+                                                    style: TextStyle(
+                                                        fontSize: 13,
+                                                        fontWeight:
+                                                            FontWeight.w200,
+                                                        color: Color.fromARGB(
+                                                            255, 45, 50, 89)),
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.06,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.31,
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                          color: Colors
+                                                              .transparent),
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: const [
+                                                      Text(
+                                                        "Nic Musangi",
+                                                        style: TextStyle(
+                                                            fontSize: 12,
+                                                            color:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    45,
+                                                                    50,
+                                                                    89)),
+                                                      ),
+                                                      Text(
+                                                        "(0792001961)",
+                                                        style: TextStyle(
+                                                            fontSize: 10,
+                                                            color:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    45,
+                                                                    50,
+                                                                    89)),
+                                                      )
+                                                    ],
+                                                  )),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -183,8 +357,8 @@ class _WelfareState extends State<Welfare> {
                           ),
                         ),
                         Container(
-                          height: MediaQuery.of(context).size.height * 0.15,
-                          width: MediaQuery.of(context).size.width * 0.7,
+                          height: MediaQuery.of(context).size.height * 0.16,
+                          width: MediaQuery.of(context).size.width * 0.8,
                           decoration: const BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
@@ -201,38 +375,64 @@ class _WelfareState extends State<Welfare> {
                             children: [
                               Container(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.15,
-                                width: MediaQuery.of(context).size.width * 0.3,
+                                    MediaQuery.of(context).size.height * 0.16,
+                                width: MediaQuery.of(context).size.width * 0.35,
                                 decoration: const BoxDecoration(
                                     color: Colors.transparent),
                                 child: Image.asset("assets/roles.png"),
                               ),
                               Container(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.1,
-                                width: MediaQuery.of(context).size.width * 0.18,
+                                    MediaQuery.of(context).size.height * 0.16,
+                                width: MediaQuery.of(context).size.width * 0.4,
                                 decoration: const BoxDecoration(
                                     color: Colors.transparent),
                                 child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
-                                  children: const [
-                                    Text(
-                                      'Role:',
+                                  children: [
+                                    const Text(
+                                      'Roles:',
                                       style: TextStyle(
-                                          fontSize: 13,
-                                          color:
-                                              Color.fromARGB(255, 45, 50, 89),
-                                          fontWeight: FontWeight.bold,
-                                          fontStyle: FontStyle.italic),
+                                        fontSize: 13,
+                                        color: Color.fromARGB(255, 45, 50, 89),
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                    Text(
-                                      'Helping the\nneedy in the\nchurch',
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          color:
-                                              Color.fromARGB(255, 45, 50, 89),
-                                          fontStyle: FontStyle.italic),
+                                    Container(
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.1,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.4,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: const [
+                                          Align(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              '1. Planning of charity activites',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: Color.fromARGB(
+                                                    255, 45, 50, 89),
+                                              ),
+                                            ),
+                                          ),
+                                          Align(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              '2. Helping the nneedy in the\nchurch',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                color: Color.fromARGB(
+                                                    255, 45, 50, 89),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -289,8 +489,8 @@ class _WelfareState extends State<Welfare> {
                           children: [
                             IconButton(
                                 onPressed: () async {
-                                  /*await FlutterPhoneDirectCaller.callNumber(
-                                      welfareCommitteeNumber);*/
+                                  await FlutterPhoneDirectCaller.callNumber(
+                                      welfareCommitteeNumber);
                                 },
                                 icon: const Icon(Icons.phone),
                                 color: Colors.white),
@@ -324,7 +524,7 @@ class _WelfareState extends State<Welfare> {
                             IconButton(
                                 onPressed: () async {
                                   final url = 'sms:$welfareCommitteeNumber';
-                                  //await launchUrlString(url);
+                                  await launchUrlString(url);
                                 },
                                 color: Colors.white,
                                 icon: const Icon(Icons.message)),
@@ -362,9 +562,9 @@ class _WelfareState extends State<Welfare> {
                                   const subject = 'Welfare Comittee Inquiries';
                                   final url =
                                       'mailto:$toEmail?subject=${Uri.encodeFull(subject)}';
-                                  /*if (await canLaunchUrlString(url)) {
+                                  if (await canLaunchUrlString(url)) {
                                     await launchUrlString(url);
-                                  }*/
+                                  }
                                 },
                                 color: Colors.white,
                                 icon: const Icon(Icons.email_rounded)),
@@ -396,7 +596,15 @@ class _WelfareState extends State<Welfare> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  DatabaseReference reference =
+                                      FirebaseDatabase.instance.ref();
+                                  setState(() {
+                                    reference
+                                        .child('Value1')
+                                        .set({'Dust': "20"});
+                                  });
+                                },
                                 color: Colors.white,
                                 icon: const Icon(Icons.volunteer_activism)),
                             const Text(

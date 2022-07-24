@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "349647800974",
+    "project_id": "dekutca-e9315",
+    "storage_bucket": "dekutca-e9315.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349647800974:android:5e7b129257f520b02517df",
+        "android_client_info": {
+          "package_name": "com.example.dekutca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349647800974-3ok89fmon2sfo80qolg0geb55blknjtq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ_u4TWyJCuUZsY-khfqgxXi2Dfxj5jqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349647800974-3ok89fmon2sfo80qolg0geb55blknjtq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
